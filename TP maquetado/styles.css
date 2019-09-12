@@ -1,0 +1,33 @@
+*{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.header {
+  height: 95vh;
+  background-image: url('./Tp maquetado/img/header.jpg');
+  display: flex;
+  justify-content: space-around;
+  color: whitesmoke;
+}
+
+.navbar {
+  width: 100%;
+}
+
+.navigation__nav {
+  
+}
+
+.header__logo {
+  
+}
+
+.navigation__item {
+  text-decoration: none;
+  color: inherit;
+  margin: 4px;
+}
+
+.subtitle {
+  text-align: ;
+}
