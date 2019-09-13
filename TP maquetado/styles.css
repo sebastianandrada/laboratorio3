@@ -2,9 +2,12 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.main {
+  background-image: url('./Tp maquetado/img/header.jpg');
+}
+
 .header {
   height: 95vh;
-  background-image: url('./Tp maquetado/img/header.jpg');
   display: flex;
   justify-content: space-around;
   color: whitesmoke;
@@ -29,5 +32,15 @@
 }
 
 .subtitle {
-  text-align: ;
+  color: white;
+}
+
+.nosotros {
+  
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
