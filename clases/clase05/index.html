@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Ajax</title>
+    <style>
+    
+    </style>
+    <script>
+      /*var http = new XMLHttpRequest()
+      
+      http.onreadystatechange = function() {
+        console.log('Llego respuesta', http.readyState, http.status, http.responseText)
+
+        if(http.readyState === 4 && http.status === 200) {
+          console.log('Tenemos respuesta', http.responseText)
+        }
+      }
+
+      http.open('GET', 'http://localhost:3000/login')
+      http.send()*/
+
+      function login() {
+        var loading = document.getElementById('loading')
+        var usr = document.getElementById('usr').value
+        var pass = document.getElementById('pass').value
+        var http = new XMLHttpRequest()
+        loading.hidden = false
+        
+        http.open(
+          'POST',
+          `http://localhost:3000/loginUsuario`
+        )
+        http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+        http.onreadystatechange = function() {
+        console.log('Llego respuesta', http.readyState, http.status, http.responseText)
+
+        if(http.readyState === 4 && http.status === 200) {
+          console.log('Tenemos respuesta', http.responseText)
+          loading.hidden = true
+        }
+      }
+        http.send(`usr=${usr}&pass=${pass}`) 
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>Login:</legend>
+        <br />
+        <label>Usuario:</label><br />
+        <input type="text" name="usuario" id="usr" /><br />
+        Contraseña <br />
+        <input type="password" name="password" id="pass" /><br />
+        <input type="checkbox" name="check" id="recordar" checked /><label
+          for="recordar"
+          >Recordar usuario y contraseña</label
+        ><br />
+        <input type="button" value="Enviar" onclick="login()" />
+        <input type="reset" />
+      </fieldset>
+    </form>
+    <img src="./img/loadingGato.gif" id='loading' hidden="true">
+  </body>
+</html>

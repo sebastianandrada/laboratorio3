@@ -4,7 +4,7 @@
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%; /** */
+  font-size: 62.5%; /** reset para rems - 62.5% = 10px de 16px */
 }
 
 body {
@@ -27,6 +27,10 @@ body {
   width: 100%;
 }
 
+nav a:hover {
+  color: green;
+}
+
 .navigation__nav {
   
 }
@@ -38,11 +42,15 @@ body {
 .navigation__item {
   text-decoration: none;
   color: inherit;
-  margin: 4px;
+  margin: 4rem;
 }
 
 .subtitle {
+  /* font-size: 10.8rem; */
+  padding-bottom: 2rem;
+  max-width: 40rem;
   color: white;
+  line-height: 2;
 }
 
 .nosotros {
