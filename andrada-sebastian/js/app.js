@@ -22,7 +22,10 @@ function mostrarPersonas(personas) {
 
 function mostrarDatos(event) {
   mostrarForm()
-  console.log(event.target.children[1].children[1].textContent)
+  console.log(event.target.children[1].children[1].innerHTML)
+  console.log(event.target.children[1].children[2].innerHTML)
+  console.log(event.target.children[1].children[2].innerHTML)
+  // document.getElementById()
 }
 
 function addPersona(persona) {
