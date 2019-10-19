@@ -13,6 +13,26 @@ $('document').ready(function() {
   $('#txt').attr('id', 'perro') // -> al atributo id, le pone el atributo perro
 
   /**Ajax w3school */
+  $('button').click( function() {
+    $.get('http://localhost:3000/personas'), 
+    function(data, status) {
+      for(var i=0;i<length;i++) {
+        console.log(data[i])
+      }
+    }
+  })
+
+  $('button').click(function() {
+  $.post('url',
+  {
+    nombre : "donald duck",
+    apellido : "Dugbior",
+    id : 12
+  }, 
+  function(data, status) {
+    alert(data + status)
+  })
+  })
 })
 
 //$('divCard').dblclick(mostrar)
