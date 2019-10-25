@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Parcial labo III</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./node_modules/jquery/dist/jquery.min.js" ></script>
+    <script src="./js/app.js"></script>
+  </head>
+  <body>
+    <div class="container" id="personas"></div>
+
+    <div id="form-editar" class="form-editar" hidden>
+      <button class="btn-cerrar" onclick="cerrarForm()">x</button>
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" placeholder="nombre" />
+      <label for="apellido">Apellido</label>
+      <input id="apellido" type="text" placeholder="apellido" />
+      <label for="sexo">Sexo</label>
+      <select name="sexo" id="sexo">
+        <option value="Female">Femenino</option>
+        <option value="Male">Masculino</option>
+      </select>
+      <footer class="footer-form">
+        <button id="btnEliminar" class="btn" onclick="eliminar()">
+          Eliminar
+        </button>
+        <button id="btnModificar" class="btn btn-modificar" onclick="modificar()">
+          Modificar
+        </button>
+      </footer>
+    </div>
+  </body>
+</html>
