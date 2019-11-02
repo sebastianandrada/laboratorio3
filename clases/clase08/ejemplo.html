@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script>
+    var person2 = {
+      name: 'Carlos',
+      lastName: 'Lopez'
+    }
+    var printName = function () {
+      console.log(this.name + ' ' + this.lastName)
+    }
+    printName.apply(person2) // apply -> setea quien es el this
+
+    $(document).ready(function () {
+
+    })
+    $.ajax()
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-4 borde">Columna 1</div>
+      <div class="col-4 borde color1">Columna 2</div>
+      <div class="col-4 borde color2">Columna 3</div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-4">Columna 1</div>
+      <div class="col-sm-4">Columna 2</div>
+      <div class="col-sm-4">Columna 3</div>
+    </div>
+  </div>
+  
+</body>
+
+</html>
