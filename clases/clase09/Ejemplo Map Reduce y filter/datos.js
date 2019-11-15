@@ -1046,25 +1046,40 @@ var datos =[
   lib.userAgeAverage = function () {
     return datos.reduce( function (edadTotal, item) {
       return edadTotal += item.age
-    }, 0)
+    }, 0) / datos.length
   };
 
   // Retornar el promedio de edad de los usuarios hombres (number)
   lib.userMaleAgeAverage = function () {
-    
-  
+    var cantidadHombres = 0
+    return (datos.reduce( function (sumaEdades, item) {
+      if (item.gender === 'male') {
+        sumaEdades += item.age
+        cantidadHombres ++
+      }
+      return sumaEdades
+    }, 0) / cantidadHombres)
   };
 
   // Retornar el promedio de edad de los usuarios mujeres (number)
   lib.userFemaleAgeAverage = function () {
-  
+    var cantidadMujeres = 0
+    return (datos.reduce( function (sumaEdades, item) {
+      if (item.gender === 'female') {
+        sumaEdades += item.age
+        cantidadMujeres ++
+      }
+      return sumaEdades
+    }, 0) / cantidadMujeres)
   };
 
   // Retornar un objeto  de etiquetas (tags)
   // cada property del objeto es el nombre de una etiqueta
   // y el value es la cantidad de usuarios que tienene esa etiqueta
   lib.tagCloud = function () {
-    
+    return datos.reduce( function (obj, item) {
+
+    },)
   };
   
   console.log(lib);
