@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Parcial</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="./js/persona.js"></script>
+  <script src="./js/alumno.js"></script>
+  <script src="./js/profesor.js"></script>
+  <script src="./js/app.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row border-bottom border-dark title">
+      <h1>ABM Personas</h1>
+    </div>
+
+    <form>
+      <div class="form-group">
+        <label for="idPerson">Id</label>
+        <input type="text" class="form-control" id="idPerson">
+      </div>
+      <div class="form-group">
+        <label for="nombrePersona">Nombre</label>
+        <input type="text" class="form-control" id="nombrePersona">
+      </div>
+      <div class="form-group">
+        <label for="apellido">Apellido</label>
+        <input type="text" class="form-control" id="apellido">
+      </div>
+      <div class="form-group">
+        <label for="edad">Edad</label>
+        <input type="number" class="form-control" id="edad">
+      </div>
+      <div class="form-group">
+        <label for="sexo">Sexo</label>
+        <select class="form-control" id="sexo">
+          <option selecte>Seleccione un sexo</option>
+          <option value="masculino">Masculino</option>
+          <option value="femenino">Femenino</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Agregar</button>
+        <button type="submit" class="btn btn-primary">Eliminar</button>
+        <button class="btn btn-secondary float-right">Limpiar LocalStorage</button>
+      </div>
+    </form>
+
+    <section>
+      <h2 class="border-top border-bottom border-dark title">Filtros</h2>
+      <div class="row">
+        <div class="col-md-4 input-group mb-5">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="filtroSexo">Filtrar por: </label>
+          </div>
+          <select class="custom-select" id="filtroSexo">
+            <option selected>Elije un sexo</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-6">
+              <p>Promedio de edad:</p>
+            </div>
+            <div class="col-md-6">
+              <input type="number" id="edad">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 ">
+          <button class="btn btn-info float-right">Calcular Promedio</button>
+        </div>
+
+    </section>
+
+    <section>
+      <h2 class="border-top border-bottom border-dark title">Campos mostrados Tildar <small>campos a mostrar</small>
+      </h2>
+      <div class="row">
+        <div class="col-md-3 form-check">
+          <input type="checkbox" class="form-check-input" id="idCheck">
+          <label class="form-check-label" for="idCheck">Id</label>
+        </div>
+        <div class="col-md-3 form-check">
+          <input type="checkbox" class="form-check-input" id="nombreOption">
+          <label class="form-check-label" for="nombreOption">Nombre</label>
+        </div>
+        <div class="col-md-3 form-check">
+          <input type="checkbox" class="form-check-input" id="apellidoOption">
+          <label class="form-check-label" for="apellidoOption">Apellido</label>
+        </div>
+        <div class="col-md-3 form-check">
+          <input type="checkbox" class="form-check-input" id="edadOption">
+          <label class="form-check-label" for="edadOption">Edad</label>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="border-top border-bottom border-dark title">Lista de Personas</h2>
+      <table class="table bg-light">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">Edad</th>
+              <th scope="col">Sexo</th>
+              <th scope="col">Modificar</th>
+              <th scope="col">Borrar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>24</td>
+              <td>@mdo</td>
+              <td><Button class="btn btn-warning">Modificar</Button></td>
+              <td><Button class="btn btn-danger">Borrar</Button></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>24</td>
+              <td>@fat</td>
+              <td><Button class="btn btn-warning">Modificar</Button></td>
+              <td><Button class="btn btn-danger">Borrar</Button></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>24</td>
+              <td>@twitter</td>
+              <td><Button class="btn btn-warning">Modificar</Button></td>
+              <td><Button class="btn btn-danger">Borrar</Button></td>
+            </tr>
+          </tbody>
+        </table>
+    </section>
+
+  </div>
+  </div>
+</body>
+
+</html>
