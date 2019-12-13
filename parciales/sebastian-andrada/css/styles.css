@@ -1,0 +1,88 @@
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: lightseagreen;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.form-editar {
+  background-color: lightgoldenrodyellow;
+  width: 50%;
+  padding: 20px;
+  border-radius: 5px;
+  position: fixed;
+  left: 25%;
+  bottom: 25px;
+  min-height: calc(100vh - 200px);
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.footer-form {
+  display: flex;
+  justify-content: space-around;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: inline-block;
+  }
+
+.btn {
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  height: 50px;
+  margin: 10px 10px;
+}
+
+.btn-modificar {
+  background-color: lightseagreen;
+}
+
+.spinner {
+  height: 250px;
+  left: 50%;
+  margin-top: -125px;
+  margin-left: -125px;
+  position: absolute;
+  top: 50%;
+  width: 250px;
+}
+
+.error {
+  border: 1px solid red;
+}

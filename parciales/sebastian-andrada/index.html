@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>recuperatorio</title>
+  <script src="./js/app.js"></script>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+  <div class="lista-materias">
+    <table id="tabla" class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Cuatrimestre</th>
+          <th>Fecha final</th>
+          <th>Turno</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        
+      </tbody>
+    </table>
+  </div>
+
+  <div id="form-editar" class="form-editar" hidden>
+    <button class="btn-cerrar" onclick="cerrarForm()">x</button><br>
+    <label for="id" hidden>ID</label>
+    <input type="hidden" id="id" placeholder="Ingrese id" >
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" placeholder="Ingrese nombre">
+    <label for="cuatrimestre">cuatrimestre</label>
+    <select name="cuatrimestre" id="cuatrimestre" disabled>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+    <label for="fecha">fecha</label>
+    <input type="text" id="fecha" placeholder="Ingrese fecha">
+    <label for="turno">turno</label>
+    <input type="radio" name="turno" id="Mañana" value="Mañana">Mañana
+    <input type="radio" name="turno" id="Noche" value="Noche">Noche
+
+    <footer class="footer-form">
+      <button id="btnEliminar" class="btn" onclick="eliminar()">
+        Eliminar
+      </button>
+      <button id="btnModificar" class="btn btn-modificar" onclick="modificar()">
+        Modificar
+      </button>
+    </footer>
+  </div>
+
+  <div><img src="./img/spinner.jpg" class="spinner" id="loading" ></div>
+</body>
+
+</html>
