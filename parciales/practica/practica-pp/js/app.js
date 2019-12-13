@@ -1,12 +1,15 @@
 window.addEventListener('load', iniciar)
 
 function iniciar() {
+  var loading = document.getElementById('loading')
   var http = new XMLHttpRequest()
+  loading.hidden = false
   http.open('GET', 'http://localhost:3000/personas')
-  http.onreadystatechange = function() {
+  http.onreadystatechange = function () {
     if (http.readyState === 4 && http.status === 200) {
       var personas = JSON.parse(http.responseText)
       mostrarPersonas(personas)
+      loading.hidden = true
     }
   }
   http.send()
@@ -23,6 +26,7 @@ function crearCard(persona) {
   var container = document.getElementById('personas')
   var card = document.createElement('div')
   card.classList.add('card')
+  card.id = persona.id
   var image = document.createElement('img')
   image.src = './img/user.png'
   var sectionDatos = document.createElement('section')
@@ -43,7 +47,7 @@ function crearCard(persona) {
   sectionDatos.appendChild(sexo)
   sectionDatos.appendChild(id)
 
-  card.addEventListener('click', function(p) {
+  card.addEventListener('click', function (p) {
     mostrarDatos(p)
   })
 
@@ -72,17 +76,58 @@ function modificar() {
   var apellido = document.getElementById('apellido').value
   var sexo = document.getElementById('sexo').value
   var id = parseInt(document.getElementById('id').value)
+  var loading = document.getElementById('loading')
+
+  if (ingresoValido(nombre, apellido, sexo)) {
+    loading.hidden = false
+    var http = new XMLHttpRequest()
+    http.open('POST', 'http://localhost:3000/editar')
+    http.setRequestHeader('Content-type', 'application/json')
+    http.onreadystatechange = function () {
+      if (http.readyState === 4 && http.status === 200) {
+        console.log(JSON.parse(http.responseText))
+        actualizarCard(JSON.parse(http.responseText))
+        loading.hidden = true
+        cerrarForm()
+      }
+    }
+    var persona = { 'id': id, 'nombre': nombre, 'apellido': apellido, 'sexo': sexo }
+    http.send(JSON.stringify(persona))
+  } else {
+    alert('Datos invalidos')
+  }
+
+}
+
+function actualizarCard(persona) {
+  document.getElementById(persona.id).children[1].children[0].innerHTML = persona.nombre
+  document.getElementById(persona.id).children[1].children[1].innerHTML = persona.apellido
+  document.getElementById(persona.id).children[1].children[2].innerHTML = persona.sexo
+}
+
+function eliminar() {
+  var id = parseInt(document.getElementById('id').value)
+  var loading = document.getElementById('loading')
+  loading.hidden = false
 
   var http = new XMLHttpRequest()
-  http.open('POST', 'http://localhost:3000/editar')
+  http.open('POST', 'http://localhost:3000/eliminar')
   http.setRequestHeader('Content-type', 'application/json')
-  http.onreadystatechange = function() {
-    if (http.readyState === 4 && http.readyState === 200) {
-      console.log(this.responseText)
+  http.onreadystatechange = function () {
+    if(http.readyState === 4 && http.status === 200) {
+      console.log(http.responseText)
+      borrarCard(id)
+      loading.hidden = true
+      cerrarForm()
     }
   }
-  var persona = {'id' : id, 'nombre' : nombre, 'apellido' : apellido, 'sexo' : sexo}  
-  http.send(JSON.stringify(persona))
+  var request = {'id' : id}
+  http.send(JSON.stringify(request))
+}
+
+function borrarCard(id) {
+  var el = document.getElementById(id)
+  el.remove()
 }
 
 function mostrarForm() {
@@ -93,4 +138,8 @@ function mostrarForm() {
 function cerrarForm() {
   var form = document.getElementById('form-editar')
   form.hidden = true
+}
+  
+function ingresoValido(nombre, apellido, sexo) {
+  return nombre.length > 3 && apellido.length > 3 && sexo != null && sexo != undefined
 }

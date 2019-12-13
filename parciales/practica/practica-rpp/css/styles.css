@@ -1,0 +1,55 @@
+.formulario {
+  background-color: lightgray;
+  width: 50%;
+  padding: 20px;
+  border-radius: 5px;
+  position: fixed;
+  left: 25%;
+  bottom: 25%;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+input[type="date"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: lightseagreen;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
